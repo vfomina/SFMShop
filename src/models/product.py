@@ -32,6 +32,9 @@ class Product:
                 f"Продано {amount} шт. товара {self.name}. Остаток {self.stock}"
             )
 
+    def apply_discount(self, discount):
+        self.price = self.price * (1 - discount)
+
     def __str__(self) -> str:
         return f"Товар: {self.name}, Цена {self.price} руб., Количество {self.quantity}"
 
