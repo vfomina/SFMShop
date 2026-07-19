@@ -7,11 +7,9 @@ class User:
         self.set_email(email)
 
     def set_email(self, value):
-        if "@" not in value:
+        if ("@" or '.') not in value:
             raise ValidationError("Неверный формат email")
         self.email = value
 
     def get_info(self):
         return f"Пользователь: {self.name}, Email: {self.email}"
-
-        #TODO: проверить, что в email есть точка и @
