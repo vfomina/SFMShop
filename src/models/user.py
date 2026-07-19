@@ -13,3 +13,5 @@ class User:
 
     def get_info(self):
         return f"Пользователь: {self.name}, Email: {self.email}"
+
+        #TODO: проверить, что в email есть точка и @
