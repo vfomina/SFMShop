@@ -41,6 +41,9 @@ class Product:
         else:
             return 500            
 
+    def get_category(self):
+        return getattr(self, 'category', None)
+
     def __str__(self) -> str:
         return f"Товар: {self.name}, Цена {self.price} руб., Количество {self.quantity}"
 
