@@ -1,0 +1,70 @@
+diff --git a/git_conflict_resolution.txt b/git_conflict_resolution.txt
+deleted file mode 100644
+index f7b8369..0000000
+--- a/git_conflict_resolution.txt
++++ /dev/null
+@@ -1,21 +0,0 @@
+-commit 5c04235142ed02d1e9e02b1dfacbc724010ae55e
+-Merge: 1489283 3ae903f
+-Author: Valeria Fomina <v.fomina01@mail.ru>
+-Date:   Thu Jul 23 21:47:26 2026 +0300
+-
+-    Разрешён конфликт в get_total_price: скидка + округление
+-
+-diff --cc src/models/product.py
+-index 2acd77c,db3aef2..59ebc21
+---- a/src/models/product.py
+-+++ b/src/models/product.py
+-@@@ -15,7 -15,7 +15,7 @@@ class Product
+-          self.price = value
+-  
+-      def get_total_price(self):
+--         return self.price * self.quantity * 0.9
+- -        return round(self.price * self.quantity, 2)
+-++        return round(self.price * self.quantity * 0.9, 2)
+-  
+-      def check_stock(self, value: int) -> bool:
+-          return value <= self.stock
+diff --git a/git_workflow_summary.md b/git_workflow_summary.md
+index b3a733a..ef6d168 100644
+--- a/git_workflow_summary.md
++++ b/git_workflow_summary.md
+@@ -27,7 +27,6 @@
+ ## Разрешенные конфликты
+ - Конфликт в src/models/product.py при слиянии feature/add-discount-system
+ - Конфликт в src/models/product.py при слиянии feature/add-shipping
+-- Конфликт в src/models/product.py при слиянии feature/add-discount и feature/round-price - метод get_total_price объединен и добавлено и применение скидки и округление
+ ## Стратегия работы с ветками
+ 1. Создавать отдельную ветку с осмысленным названием для работы с отдельными линиями разработки (фича, фикс)
+ 2. Делать PR в основную ветку, с добавлением описания (что изменилось, зачем, как проверить) и делая squash, если коммитов слишком много
+diff --git a/src/models/product.py b/src/models/product.py
+index 59ebc21..f8ce36a 100644
+--- a/src/models/product.py
++++ b/src/models/product.py
+@@ -14,8 +14,9 @@ class Product:
+             raise ValidationError("Цена не может быть отрицательной")
+         self.price = value
+ 
+-    def get_total_price(self):
+-        return round(self.price * self.quantity * 0.9, 2)
++    def get_total_price(self, discount):
++        # calculate discount 
++        return self.price * self.quantity * discount
+ 
+     def check_stock(self, value: int) -> bool:
+         return value <= self.stock
+diff --git a/src/utils/cache.py b/src/utils/cache.py
+new file mode 100644
+index 0000000..3b5dde5
+--- /dev/null
++++ b/src/utils/cache.py
+@@ -0,0 +1,8 @@
++# src/utils/cache.py
++_cache = {}
++
++def get(key):
++    return _cache.get(key)
++
++def set(key, value):
++    _cache[key] = value
+\ No newline at end of file
