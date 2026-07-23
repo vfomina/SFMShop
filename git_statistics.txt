@@ -1,0 +1,122 @@
+commit e084ba616103accda3eebb37f06a888c81136e2c
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Thu Jul 23 20:18:23 2026 +0300
+
+    Добавлен метод get_category в Product
+
+ src/models/product.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 9ecda893902b67cb5191e0b7eabb112b9f992378
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Wed Jul 22 13:11:23 2026 +0300
+
+    Изменен метод get_total price в main
+
+ src/models/product.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 418ced6171a7aad5c2cb4bcfa184cd358b692fb8
+Merge: a94c49c 899807d
+Author: vfomina <124142012+vfomina@users.noreply.github.com>
+Date:   Thu Jul 23 20:26:37 2026 +0300
+
+    Merge pull request #2 from vfomina/feature/add-inventory-management
+    
+    Добавлены методы управления складом в класс Product
+
+commit 899807de5f959ae27fea0de04df967c65a39ee60
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Wed Jul 22 12:55:36 2026 +0300
+
+    Добавлены методы управления складом в класс Product
+
+ src/models/product.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit a94c49c94d64142be5cb37f99070aae2a30f1091
+Merge: 4de2197 0ae18bb
+Author: vfomina <124142012+vfomina@users.noreply.github.com>
+Date:   Wed Jul 22 12:51:24 2026 +0300
+
+    Merge pull request #1 from vfomina/feature/add-email-validation
+    
+    Добавлена заготовка валидации email в класс User
+
+commit 0ae18bba8be722c3bf60479ec07f4b8e312f1282
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Sun Jul 19 19:35:15 2026 +0300
+
+    Добавлена валидация email в класс user
+
+ src/models/user.py | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit 7190c252d79a663b0f9955707b1f5396572ec1e1
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Sun Jul 19 19:25:35 2026 +0300
+
+    Добавлена заготовка валидации email в класс User
+
+ src/models/user.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 4de21977382bb4f45a21cbf4b0c1257f97a7c5f6
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Mon Jul 13 22:43:17 2026 +0300
+
+    Добавлены текстовые файлы проекта
+
+ data/orders.txt               | 4 ++++
+ data/processed_orders.txt     | 2 ++
+ data/products.txt             | 3 +++
+ data/products_with_prices.txt | 3 +++
+ 4 files changed, 12 insertions(+)
+
+commit 943e1a9e2515f50dbfee63b05266d6c08e0f878f
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Mon Jul 13 22:42:47 2026 +0300
+
+    Добавлены readme и requirements
+
+ README.md        | 6 ++++++
+ requirements.txt | 2 ++
+ 2 files changed, 8 insertions(+)
+
+commit 7150efc60e26d2b2966d37626356ffb47179ef72
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Mon Jul 13 22:42:02 2026 +0300
+
+    Добавлены модели и main
+
+ src/__init__.py          |  0
+ src/main.py              | 36 ++++++++++++++++++++++++++++++++++
+ src/models/__init__.py   |  0
+ src/models/cart.py       | 21 ++++++++++++++++++++
+ src/models/exceptions.py | 20 +++++++++++++++++++
+ src/models/order.py      | 38 ++++++++++++++++++++++++++++++++++++
+ src/models/payment.py    | 29 +++++++++++++++++++++++++++
+ src/models/product.py    | 51 ++++++++++++++++++++++++++++++++++++++++++++++++
+ src/models/user.py       | 15 ++++++++++++++
+ 9 files changed, 210 insertions(+)
+
+commit f66549e441348c9d7eea438f4fd2239300182244
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Mon Jul 13 22:41:37 2026 +0300
+
+    Добавлен базовый код проекта
+
+ src/utils/__init__.py        |  0
+ src/utils/calculations.py    |  8 ++++++++
+ src/utils/order_processor.py |  3 +++
+ src/utils/validators.py      | 11 +++++++++++
+ 4 files changed, 22 insertions(+)
+
+commit c5728d5053290899c4357f2c8eed60959e87a92e
+Author: Valeria Fomina <v.fomina01@mail.ru>
+Date:   Mon Jul 13 22:40:45 2026 +0300
+
+    add gitignore
+
+ .gitignore | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)

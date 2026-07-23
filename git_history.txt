@@ -1,0 +1,28 @@
+* e084ba6 Добавлен метод get_category в Product
+* 9ecda89 Изменен метод get_total price в main
+*   418ced6 Merge pull request #2 from vfomina/feature/add-inventory-management
+|\  
+| | *   bd40e76 Merge branch 'main' into feature/add-shipping
+| | |\  
+| | | * 346dcea Добавлен метод get_category в Product
+| | * | 2d76d3e Добавлен метод calculate_shipping в Product
+| | |/  
+| | * 6eb79b6 Изменен метод get_total price в main
+| |/  
+|/|   
+* |   a94c49c Merge pull request #1 from vfomina/feature/add-email-validation
+|\ \  
+| | | * 0eea807 Изменен метод get_total_price в product
+| | |/  
+| | * 899807d Добавлены методы управления складом в класс Product
+| |/  
+| * 0ae18bb Добавлена валидация email в класс user
+| * 7190c25 Добавлена заготовка валидации email в класс User
+|/  
+| * a03a830 Добавлено применение скидки
+|/  
+* 4de2197 Добавлены текстовые файлы проекта
+* 943e1a9 Добавлены readme и requirements
+* 7150efc Добавлены модели и main
+* f66549e Добавлен базовый код проекта
+* c5728d5 add gitignore
