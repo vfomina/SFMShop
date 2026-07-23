@@ -17,6 +17,14 @@ class Product:
     def get_total_price(self):
         return self.price * self.quantity
 
+    def check_stock(self, value: int) -> bool:
+        return value <= self.stock
+
+    def update_stock(self, value: int):
+        if value < 0:
+            raise ValidationError("Остаток не может быть отрицательным")
+        self.stock = value
+
     def sell(self, amount):
         if amount <= 0:
             raise InvalidQuantityError(
