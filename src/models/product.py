@@ -15,7 +15,7 @@ class Product:
         self.price = value
 
     def get_total_price(self):
-        return self.price * self.quantity * 0.9
+        return round(self.price * self.quantity * 0.9, 2)
 
     def check_stock(self, value: int) -> bool:
         return value <= self.stock
