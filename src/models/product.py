@@ -14,8 +14,9 @@ class Product:
             raise ValidationError("Цена не может быть отрицательной")
         self.price = value
 
-    def get_total_price(self):
-        return self.price * self.quantity
+    def get_total_price(self, discount):
+        # calculate discount 
+        return self.price * self.quantity * discount
 
     def check_stock(self, value: int) -> bool:
         return value <= self.stock
@@ -39,6 +40,17 @@ class Product:
             print(
                 f"Продано {amount} шт. товара {self.name}. Остаток {self.stock}"
             )
+
+    def calculate_shipping(self):
+        if (total:=self.get_total_price(discount=1) > 5000):
+            return 0
+        if total > 1000:
+            return 300
+        else:
+            return 500            
+
+    def get_category(self):
+        return getattr(self, 'category', None)
 
     def __str__(self) -> str:
         return f"Товар: {self.name}, Цена {self.price} руб., Количество {self.quantity}"
