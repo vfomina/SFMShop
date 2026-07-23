@@ -41,6 +41,9 @@ class Product:
                 f"Продано {amount} шт. товара {self.name}. Остаток {self.stock}"
             )
 
+    def get_category(self):
+        return getattr(self, 'category', None)
+
     def __str__(self) -> str:
         return f"Товар: {self.name}, Цена {self.price} руб., Количество {self.quantity}"
 
